@@ -9,6 +9,13 @@
 #include "layout/pimoroni.h"
 #endif
 
+// /////////
+// User remixes / tweaks -- these take precidence above all else
+#if __has_include("layout/remixes/remix_functions.h")
+#include "layout/remixes/remix_functions.h"
+#endif
+// /////////
+
 void keyboard_post_init_user(void) {
 #ifdef POINTING_DEVICE_ENABLE
     pimoroni_trackball_set_rgbw(PIMORONI_RGB, PIMORONI_BRIGHTNESS);
