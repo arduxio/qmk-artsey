@@ -514,6 +514,20 @@ BIG_TRAILING_NONES
 #ifdef ARDUX_SIZE_40P // 40% ARDUX (off by default)
 // Main 40% ANSI layer setup
 // Uses shared defines
+
+#ifndef ARDUX_40P_LAYER_BASE
+#define ARDUX_40P_LAYER_BASE                                                                                                         \
+F0P_LEADING_NONES                                                                                                                    \
+ KEY_T4, KEY_T3, KEY_T2, KEY_T1, ARDUX_MINUS, F0P_ROW_ONE_MID_NONES ARDUX_MINUS, KEY_T1, KEY_T2, KEY_T3, KEY_T4, \
+    F0P_BETWEEN_ROW_ONE_TWO_NONES                                                                                                    \
+    KEY_B4, KEY_B3, KEY_B2, KEY_B1, OSM_SHIFT, F0P_ROW_TWO_MID_NONES OSM_SHIFT, KEY_B1, KEY_B2, KEY_B3, KEY_B4, \
+    F0P_BETWEEN_ROW_TWO_THREE_NONES                                                                                                  \
+    MO(LAYER_ID_BIG_SYM), KC_AT, KC_DEL, KC_EQL, OSM_CTRL, F0P_ROW_THREE_MID_NONES OSM_CTRL, KC_EQL, KC_DEL, KC_AT, MO(LAYER_ID_BIG_SYM), \
+    F0P_BETWEEN_ROW_THREE_THUMBS_NONES                                                                                               \
+    ARDUX_BIG_LAYER_BASE_LEFT_THUMBS, F0P_THUMB_MID_NONES ARDUX_BIG_LAYER_BASE_RIGHT_THUMBS \
+    F0P_TRAILING_NONES
+#endif
+
 #ifndef ARDUX_40P_LAYER_ANSI
 #define ARDUX_40P_LAYER_ANSI \
 F0P_LEADING_NONES \
