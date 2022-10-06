@@ -8,9 +8,9 @@
 #define VENDOR_ID       0x7E71
 #define PRODUCT_ID      0x7E72
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    ardux
-#define PRODUCT         thepaintbrush
-#define DESCRIPTION     thepaintbrush
+#define MANUFACTURER    "ardux"
+#define PRODUCT         "thepaintbrush"
+#define DESCRIPTION     "thepaintbrush"
 
 /* Board layout */
 #define MATRIX_ROWS 2

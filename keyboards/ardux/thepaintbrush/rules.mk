@@ -10,6 +10,7 @@ SPACE_CADET_ENABLE = no
 TERMINAL_ENABLE = no
 VIA_ENABLE = no
 LTO_ENABLE = no # We support arm qmk devices which are incompatabl with this avr specific option
+BOOTLOADER = caterina # New QMK versions seem to require this. For now we specify the bootloader here.
 
 # Work around limitation with userland and the way we have 'dynamic' direct wiring
 #     This *should* live in config.h but KemoNine can't figure out how to check which keymap is in use at that level
