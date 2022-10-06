@@ -10,6 +10,15 @@ SPACE_CADET_ENABLE = no
 TERMINAL_ENABLE = no
 VIA_ENABLE = no
 LTO_ENABLE = no # We support arm qmk devices which are incompatabl with this avr specific option
+
+# Bootloader selection
+#   Teensy       halfkay
+#   Pro Micro    caterina
+#   Atmel DFU    atmel-dfu
+#   LUFA DFU     lufa-dfu
+#   QMK DFU      qmk-dfu
+#   ATmega32A    bootloadHID
+#   ATmega328P   USBasp
 BOOTLOADER = caterina # New QMK versions seem to require this. For now we specify the bootloader here.
 
 # Work around limitation with userland and the way we have 'dynamic' direct wiring
