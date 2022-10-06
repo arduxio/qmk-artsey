@@ -11,6 +11,16 @@ TERMINAL_ENABLE = no
 VIA_ENABLE = no
 LTO_ENABLE = no # We support arm qmk devices which are incompatabl with this avr specific option
 
+# Bootloader selection
+#   Teensy       halfkay
+#   Pro Micro    caterina
+#   Atmel DFU    atmel-dfu
+#   LUFA DFU     lufa-dfu
+#   QMK DFU      qmk-dfu
+#   ATmega32A    bootloadHID
+#   ATmega328P   USBasp
+BOOTLOADER = caterina # New QMK versions seem to require this. For now we specify the bootloader here.
+
 # Work around limitation with userland and the way we have 'dynamic' direct wiring
 #     This *should* live in config.h but KemoNine can't figure out how to check which keymap is in use at that level
 PINS_HAND_LEFT = -DDIRECT_PINS="{ { F7, F6, F5, F4 }, { B6, B2, B3, B1 } }"
