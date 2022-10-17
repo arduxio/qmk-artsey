@@ -80,14 +80,14 @@ jobs:
             hand: right
             size: big
             fwext: hex
-          - layout: boardsource_microdox
-            hand: left
-            size: big
-            fwext: hex
-          - layout: boardsource_microdox
-            hand: right
-            size: big
-            fwext: hex
+          # - layout: boardsource_microdox
+          #   hand: left
+          #   size: big
+          #   fwext: hex
+          # - layout: boardsource_microdox
+          #   hand: right
+          #   size: big
+          #   fwext: hex
           - layout: splitkb_kyria_rev2
             hand: right
             size: big
@@ -120,14 +120,14 @@ jobs:
             hand: right
             size: 40p
             fwext: hex
-          - layout: boardsource_microdox
-            hand: left
-            size: 40p
-            fwext: hex
-          - layout: boardsource_microdox
-            hand: right
-            size: 40p
-            fwext: hex
+          # - layout: boardsource_microdox
+          #   hand: left
+          #   size: 40p
+          #   fwext: hex
+          # - layout: boardsource_microdox
+          #   hand: right
+          #   size: 40p
+          #   fwext: hex
           - layout: splitkb_kyria_rev2
             hand: right
             size: 40p

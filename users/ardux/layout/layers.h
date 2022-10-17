@@ -362,9 +362,9 @@ BIG_TRAILING_NONES
 
 #define ARDUX_BIG_LAYER_NAV_RIGHT \
 BIG_LEADING_NONES \
-KNAV_T1,          KNAV_T2,          KNAV_T3,          KNAV_T4,          KC_NO,            \
+KC_NO,           KNAV_T1,          KNAV_T2,          KNAV_T3,          KNAV_T4,           \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KNAV_B1,          KNAV_B2,          KNAV_B3,          KNAV_B4,          KC_NO,            \
+KC_NO,            KNAV_B1,          KNAV_B2,          KNAV_B3,          KNAV_B4,                      \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -381,9 +381,9 @@ BIG_TRAILING_NONES
 #endif
 #define ARDUX_BIG_LAYER_NUM_RIGHT \
 BIG_LEADING_NONES \
-KNUM_T1,          KNUM_T2,          KNUM_T3,          KNUM_T4,          KC_NO,            \
+KC_NO,            KNUM_T1,          KNUM_T2,          KNUM_T3,          KNUM_T4,          \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KNUM_B1,          KNUM_B2,          KNUM_B3,          KNUM_B4,          KC_NO,            \
+KC_NO,            KNUM_B1,          KNUM_B2,          KNUM_B3,          KNUM_B4,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -401,9 +401,9 @@ BIG_TRAILING_NONES
 
 #define ARDUX_BIG_LAYER_SYM_RIGHT \
 BIG_LEADING_NONES \
-KC_EXLM,          KC_BSLS,          KC_SCLN,          KC_GRV,           KC_NO,            \
+KC_NO,            KC_EXLM,          KC_BSLS,          KC_SCLN,          KC_GRV,           \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_TRNS,          KC_QUES,          KC_MINS,          KC_EQL,           KC_NO,            \
+KC_NO,            KC_TRNS,          KC_QUES,          KC_MINS,          KC_EQL,           \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -421,9 +421,9 @@ BIG_TRAILING_NONES
 
 #define ARDUX_BIG_LAYER_PAR_RIGHT \
 BIG_LEADING_NONES \
-KC_TRNS,          KC_LPRN,          KC_RPRN,          KC_LCBR,          KC_NO,            \
+KC_NO,            KC_TRNS,          KC_LPRN,          KC_RPRN,          KC_LCBR,                      \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_NO,            KC_LBRC,          KC_RBRC,          KC_RCBR,          KC_NO,            \
+KC_NO,            KC_NO,            KC_LBRC,          KC_RBRC,          KC_RCBR,                      \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -441,9 +441,9 @@ BIG_TRAILING_NONES
 
 #define ARDUX_BIG_LAYER_CUS_RIGHT \
 BIG_LEADING_NONES \
-KC_MUTE,          KC_INS,           KC_VOLU,          KC_NO,            KC_NO,            \
+KC_NO,            KC_MUTE,          KC_INS,           KC_VOLU,          KC_NO,            \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_RSFT,          KC_PSCR,          KC_VOLD,          KC_TRNS,          KC_NO,            \
+KC_NO,            KC_RSFT,          KC_PSCR,          KC_VOLD,          KC_TRNS,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -461,9 +461,9 @@ BIG_TRAILING_NONES
 
 #define ARDUX_BIG_LAYER_MSE_RIGHT \
 BIG_LEADING_NONES \
-KMSE_T1,          KMSE_T2,          KMSE_T3,          KMSE_T4,          KC_NO,            \
+KC_NO,           KMSE_T1,          KMSE_T2,          KMSE_T3,          KMSE_T4,           \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KMSE_B1,          KMSE_B2,          KMSE_B3,          KMSE_B4,          KC_NO,            \
+KC_NO,           KMSE_B1,          KMSE_B2,          KMSE_B3,          KMSE_B4,           \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
