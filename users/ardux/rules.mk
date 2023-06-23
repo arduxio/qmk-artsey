@@ -43,7 +43,7 @@ VPATH += keyboards/gboards/
 
 ###########
 # ARDUX Sources
-SRC += ardux.c
+INTROSPECTION_KEYMAP_C = ardux.c
 
 ##########
 # Set size for all build steps
