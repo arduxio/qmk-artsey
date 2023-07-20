@@ -8,6 +8,10 @@
       "pid": "0x7E71",
       "vid": "0x7E72"
     },
+
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+   
     "layouts": {
         "LAYOUT": {
             "layout": [
