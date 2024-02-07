@@ -18,6 +18,7 @@ If these commands don't work, please ensure you've completed all steps per the Q
 
 ``` sh
 cd /qmk_firmware/users/ardux
+# ALLOW_WARNINGS is a required argument as of QMK 0.18. Otherwise warnings will kill your build
 # ARDUX_SIZE is a required argument
 # ARDUX_HAND is a required argument
 # ARDUX_OLED_BOOT_LOGO is an optional argument. default: yes
@@ -38,7 +39,8 @@ cd /qmk_firmware/users/ardux
 # ENCODER_ENABLE whether or not to include encoder support. default: no ; uses just over 1k of rom space which is quite large
 # RGBLIGHT_ENABLE whether or not to turn on some underglow features. default: no ; uses a TON of rom space and we need a lot for 40% ardux to work
 # SPLIT_USB_DETECT use this option (see kemo builds) when using an unmodified miranda or old elite-c
-qmk -v compile -e ARDUX_SIZE=[std|big|40p] \
+qmk -v compile -e ALLOW_WARNINGS=yes
+               -e ARDUX_SIZE=[std|big|40p] \
                -e ARDUX_HAND=[left|right] \
                -e ARDUX_OLED_BOOT_LOGO=[yes|no] \
                -e ARDUX_BOOT_LOGO_TIMEOUT=[ms] \
