@@ -10,6 +10,8 @@ The below is a work in progress. Don't be surprised if there are quirks in the i
 
 If your qmk_firmware repository is NOT located under ~/qmk_firmware, you may encounter qmk build issue.  In such case, try moving the repository or adding a symlink, then retry compiling.
 
+Your qmk_firmware repository should ALSO be on the 0.18.5 branch of QMK. Newer updates will cause errors when compiling.
+
 ``` sh
 ln -s your_path_to_repos/qmk_firmware ~/qmk_firmware
 ```
