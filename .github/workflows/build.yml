@@ -196,15 +196,15 @@ jobs:
     steps:
       - name: Get current date/time
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d-%H%M')"
+        run: echo "date=$(date +'%Y%m%d-%H%M')" >>$GITHUB_OUTPUT
       - name: Generate release text
         id: release_text
         run: >
-          echo "::set-output name=release_text::$(echo '<b>Precompiled firmware files for ARDUX</b><br><br>
+          echo "release_text=$(echo '<b>Precompiled firmware files for ARDUX</b><br><br>
           Download a firmware file by expanding "Assets", right clicking, and choosing "Save File As" or "Save Link As".
           <br>${{ github.event.inputs.releaseBody }}
           <br>Released on ${{ steps.date.outputs.date }}.
-          <br><br>${{ steps.docker_build.outputs.commits }}')"
+          <br><br>${{ steps.docker_build.outputs.commits }}')" >>$GITHUB_OUTPUT
       - name: Download build artifacts for release
         uses: actions/download-artifact@v4
         with:
