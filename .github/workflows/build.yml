@@ -138,9 +138,9 @@ jobs:
             fwext: hex
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Cache - QMK Source
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-qmk_firmware
         with:
@@ -182,7 +182,7 @@ jobs:
       - name: Prep artifacts
         run: cp /qmk_firmware/.build/${{ matrix.layout }}_ardux.${{ matrix.fwext }} /qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }} 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: "ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
           path: "/qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
@@ -206,7 +206,7 @@ jobs:
           <br>Released on ${{ steps.date.outputs.date }}.
           <br><br>${{ steps.docker_build.outputs.commits }}')"
       - name: Download build artifacts for release
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: release
       - name: List files to include in release
