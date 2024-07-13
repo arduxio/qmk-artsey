@@ -1,11 +1,6 @@
 name: Build
 
-on: 
-  push:
-    branches:
-      - main
-  pull_request:
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
@@ -138,9 +133,9 @@ jobs:
             fwext: hex
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Cache - QMK Source
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           cache-name: cache-qmk_firmware
         with:
@@ -182,7 +177,7 @@ jobs:
       - name: Prep artifacts
         run: cp /qmk_firmware/.build/${{ matrix.layout }}_ardux.${{ matrix.fwext }} /qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }} 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: "ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
           path: "/qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
@@ -196,17 +191,17 @@ jobs:
     steps:
       - name: Get current date/time
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d-%H%M')"
+        run: echo "date=$(date +'%Y%m%d-%H%M')" >>$GITHUB_OUTPUT
       - name: Generate release text
         id: release_text
         run: >
-          echo "::set-output name=release_text::$(echo '<b>Precompiled firmware files for ARDUX</b><br><br>
+          echo "release_text=$(echo '<b>Precompiled firmware files for ARDUX</b><br><br>
           Download a firmware file by expanding "Assets", right clicking, and choosing "Save File As" or "Save Link As".
           <br>${{ github.event.inputs.releaseBody }}
           <br>Released on ${{ steps.date.outputs.date }}.
-          <br><br>${{ steps.docker_build.outputs.commits }}')"
+          <br><br>${{ steps.docker_build.outputs.commits }}')" >>$GITHUB_OUTPUT
       - name: Download build artifacts for release
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: release
       - name: List files to include in release
