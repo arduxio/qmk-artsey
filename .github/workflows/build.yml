@@ -15,66 +15,92 @@ jobs:
             hand: left
             size: std
             fwext: hex
+            args: ~
           - layout: ardux_thepaintbrush
             hand: right
             size: std
             fwext: hex
+            args: ~
+          - layout: ardux_thepaintbrush
+            hand: left
+            size: std
+            fwext: uf2
+            args: "-e CONVERT_TO=promicro_rp2040"
+          - layout: ardux_thepaintbrush
+            hand: right
+            size: std
+            fwext: uf2
+            args: "-e CONVERT_TO=promicro_rp2040"
           - layout: faunchpad
             hand: left
             size: std
             fwext: hex
+            args: ~
           - layout: faunchpad
             hand: right
             size: std
             fwext: hex
+            args: ~
           - layout: ai03_soyuz
             hand: left
             size: std
             fwext: hex
+            args: ~
           - layout: ai03_soyuz
             hand: right
             size: std
             fwext: hex
+            args: ~
           - layout: geekboards_macropad_v2
             hand: left
             size: std
             fwext: bin
+            args: ~
           - layout: geekboards_macropad_v2
             hand: right
             size: std
             fwext: bin
+            args: ~
           - layout: crkbd_rev1
             hand: left
             size: big
             fwext: hex
+            args: ~
           - layout: crkbd_rev1
             hand: right
             size: big
             fwext: hex
+            args: ~
           - layout: gboards_gergo
             hand: left
             size: big
             fwext: hex
+            args: ~
           - layout: gboards_gergo
             hand: right
             size: big
             fwext: hex
+            args: ~
           - layout: ferris_sweep
             hand: left
             size: big
             fwext: hex
+            args: ~
           - layout: ferris_sweep
             hand: right
             size: big
             fwext: hex
+            args: ~
           - layout: draculad
             hand: left
             size: big
             fwext: hex
+            args: ~
           - layout: draculad
             hand: right
             size: big
             fwext: hex
+            args: ~
           # - layout: boardsource_microdox
           #   hand: left
           #   size: big
@@ -87,34 +113,42 @@ jobs:
             hand: right
             size: big
             fwext: hex
+            args: ~
           - layout: splitkb_kyria_rev2
             hand: left
             size: big
             fwext: hex
+            args: ~
           - layout: crkbd_rev1
             hand: left
             size: 40p
             fwext: hex
+            args: ~
           - layout: crkbd_rev1
             hand: right
             size: 40p
             fwext: hex
+            args: ~
           - layout: ferris_sweep
             hand: left
             size: 40p
             fwext: hex
+            args: ~
           - layout: ferris_sweep
             hand: right
             size: 40p
             fwext: hex
+            args: ~
           - layout: draculad
             hand: left
             size: 40p
             fwext: hex
+            args: ~
           - layout: draculad
             hand: right
             size: 40p
             fwext: hex
+            args: ~
           # - layout: boardsource_microdox
           #   hand: left
           #   size: 40p
@@ -127,10 +161,12 @@ jobs:
             hand: right
             size: 40p
             fwext: hex
+            args: ~
           - layout: splitkb_kyria_rev2
             hand: left
             size: 40p
             fwext: hex
+            args: ~
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -165,13 +201,14 @@ jobs:
                 ln -s "${GITHUB_WORKSPACE}/users/ardux" /qmk_firmware/users/ardux;
                 echo "Created users/ardux symlink";
             fi
+            /usr/bin/python3 -m pip install -r /qmk_firmware/requirements.txt;
             qmk setup -y;
       - name: QMK Clean
         run: qmk clean
       - name: QMK Build
         run: |
             cd /qmk_firmware/users/ardux
-            qmk compile -e ALLOW_WARNINGS=yes -e ARDUX_SIZE=${{ matrix.size }} -e ARDUX_HAND=${{ matrix.hand }} layout/${{ matrix.layout }}.json
+            qmk compile -e ALLOW_WARNINGS=yes -e ARDUX_SIZE=${{ matrix.size }} -e ARDUX_HAND=${{ matrix.hand }} ${{ matrix.args }} layout/${{ matrix.layout }}.json
       - name: Debug - ls build artifact folder
         run: ls /qmk_firmware/.build
       - name: Prep artifacts
